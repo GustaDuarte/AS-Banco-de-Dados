@@ -4,21 +4,19 @@
  <img src="img\Modelagem.png" width="200" />
 </p>
 
-Comandos MongoDB:
+<h2>Comandos MongoDB:</h2>
 
-Criar as coleções e inserir os dados:
+<h1>Criar as coleções e inserir os dados:</h1>
 
+<b>use</b> GerenciamentoPedidosPizzaria
 
-use GerenciamentoPedidosPizzaria
-
-
-db.createCollection("clientes")
-db.createCollection("pedidos")
-db.createCollection("pizzas")
-db.createCollection("bebidas")
+<b>db.createCollection</b>("clientes")
+<b>db.createCollection</b>("pedidos")
+<b>db.createCollection</b>("pizzas")
+<b>db.createCollection</b>("bebidas")
 
 
-db.clientes.insertOne({
+<b>db.clientes.insertOne</b>({
   "_id": "cliente1",
   "nome": "João",
   "endereco": "Rua A, 123",
@@ -26,7 +24,7 @@ db.clientes.insertOne({
 })
 
 
-db.pedidos.insertOne({
+<b>db.pedidos.insertOne</b>({
   "_id": "pedido1",
   "cliente_id": "cliente1",
   "tipo": "entrega",
@@ -62,7 +60,7 @@ db.pedidos.insertOne({
 })
 
 
-db.pizzas.insertOne({
+<b>db.pizzas.insertOne</b>({
   "_id": "pizza1",
   "preco": 20.0,
   "tamanho": "pequena",
@@ -71,7 +69,7 @@ db.pizzas.insertOne({
 })
 
 
-db.bebidas.insertOne({
+<b>db.bebidas.insertOne</b>({
   "_id": "bebida1",
   "tipo": "refrigerante",
   "nome": "Coca-Cola",
@@ -80,68 +78,63 @@ db.bebidas.insertOne({
 })
 
 
-Atualizações e exclusões de dados:
+<h1>Atualizações e exclusões de dados:</h1>
 
-/* Atualizar o nome do cliente */
-db.clientes.updateOne({ "_id": "cliente1" }, { $set: { "nome": "Maria" } })
-
-
-/* Excluir um pedido */
-db.pedidos.deleteOne({ "_id": "pedido1" })
+<h1> Atualizar o nome do cliente </h1>
+<b>db.clientes.updateOne</b>({ "_id": "cliente1" }, { $set: { "nome": "Maria" } })
 
 
+<h1>Excluir um pedido</h1>
+<b>db.pedidos.deleteOne</b>({ "_id": "pedido1" })
 
 
 
+<h3>Consultas:</h3>
+
+<h2>Consulta simples:</h2>
+
+<h1>Consultar todos os clientes</h1>
+<b>db.clientes.find()</b>
 
 
-
-Consultas:
-
-Consulta simples:
-
-/*Consultar todos os clientes */
-db.clientes.find()
+<h1>Consultar todos os pedidos</h1>
+<b>db.pedidos.find()</b>
 
 
-/* Consultar todos os pedidos */
-db.pedidos.find()
+<h1>Consultar todas as pizzas</h1>
+<b>db.pizzas.find()</b>
 
 
-/* Consultar todas as pizzas */
-db.pizzas.find()
-
-
-/*Consultar todas as bebidas */
-db.bebidas.find()
+<h1>Consultar todas as bebidas</h1>
+<b>db.bebidas.find()</b>
 
 
 
 
 
-Consulta com uma condição:
+<h1>Consulta com uma condição:</h2>
 
-/* Consultar pedidos com tipo "entrega" */
-db.pedidos.find({ "tipo": "entrega" })
-
-
-/* Consultar pizzas com tamanho "média" */
-db.pizzas.find({ "tamanho": "média" })
+<h1>Consultar pedidos com tipo "entrega"</h1>
+<b>db.pedidos.find({ "tipo": "entrega" })</b>
 
 
-/* Consultar bebidas com preço menor que 10.0 */
-db.bebidas.find({ "preco": { $lt: 10.0 } })
+<h1>Consultar pizzas com tamanho "média"</h1>
+<b>db.pizzas.find({ "tamanho": "média" })</b>
 
 
+<h1>Consultar bebidas com preço menor que 10.0</h1>
+<b>db.bebidas.find({ "preco": { $lt: 10.0 } })</b>
 
 
 
-Consulta utilizando agreggate com $group (Group by):
-Consulta para contar quantas vezes uma pizza de tamanho "pequena" foi pedida
+
+
+</h2>Consulta utilizando agreggate com $group (Group by):</h2>
+<i>Consulta para contar quantas vezes uma pizza de tamanho "pequena" foi pedida</i>
 
 
 
-db.pedidos.aggregate([
+<b>db.pedidos.aggregate</b>([
   {
     $match: {
       "pizzas.tamanho": "pequena"
@@ -157,13 +150,10 @@ db.pedidos.aggregate([
 
 
 
+</h2>Consulta utilizando agreggate com $lookup (Joins):</h2>
+<i>Consulta para contar quantas vezes um cliente fez pedidos e mostrar o nome dele</i>
 
-
-
-Consulta utilizando agreggate com $lookup (Joins):
-Consulta para contar quantas vezes um cliente fez pedidos e mostrar o nome dele
-
-db.pedidos.aggregate([
+<b>db.pedidos.aggregate</b>([
   {
     $lookup: {
       from: "clientes",
