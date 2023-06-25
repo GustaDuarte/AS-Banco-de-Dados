@@ -1,0 +1,61 @@
+[{
+  "_id": "pedido1",
+  "cliente_id": "cliente1",
+  "tipo": "entrega",
+  "data": "2023-06-21",
+  "hora": "18:30",
+  "endereco": "Rua A, 123",
+  "pizzas": [
+    {
+      "_id": "pizza1",
+      "preco": 20,
+      "tamanho": "pequena",
+      "sabor": "margherita",
+      "descricao": "Molho de tomate, mussarela, manjericão"
+    },
+    {
+      "_id": "pizza2",
+      "preco": 30,
+      "tamanho": "média",
+      "sabor": "calabresa",
+      "descricao": "Molho de tomate, mussarela, calabresa"
+    }
+  ],
+  "bebidas": [
+    {
+      "_id": "bebida1",
+      "tipo": "refrigerante",
+      "nome": "Coca-Cola",
+      "preco": 5,
+      "litros": 2
+    }
+  ],
+  "total": 55
+},
+{
+  "_id": "pedido2",
+  "cliente_id": "cliente1",
+  "tipo": "entrega",
+  "data": "2023-05-15",
+  "hora": "20:30",
+  "endereco": "Rua A, 123",
+  "pizzas": [
+    {
+      "_id": "pizza1",
+      "preco": 20,
+      "tamanho": "pequena",
+      "sabor": "margherita",
+      "descricao": "Molho de tomate, mussarela, manjericão"
+    }
+  ],
+  "bebidas": [
+    {
+      "_id": "bebida1",
+      "tipo": "refrigerante",
+      "nome": "Coca-Cola",
+      "preco": 5,
+      "litros": 2
+    }
+  ],
+  "total": 25
+}]

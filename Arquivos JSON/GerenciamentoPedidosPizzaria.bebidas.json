@@ -1,0 +1,7 @@
+[{
+  "_id": "bebida1",
+  "tipo": "refrigerante",
+  "nome": "Coca-Cola",
+  "preco": 5,
+  "litros": 2
+}]

@@ -1,0 +1,12 @@
+[{
+  "_id": "cliente1",
+  "nome": "João",
+  "endereco": "Rua A, 123",
+  "telefone": "987654321"
+},
+{
+  "_id": "cliente2",
+  "nome": "Paulo",
+  "endereco": "Rua B, 321",
+  "telefone": "123456789"
+}]
